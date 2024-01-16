@@ -1,7 +1,7 @@
 {
   "name": "federico-vite-lib-reanimated",
   "repository": "https://github.com/eng-fashion-moncler/monclient-corporate-app-components",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "type": "module",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
