@@ -1,10 +1,10 @@
 {
-  "name": "@eng-fashion-moncler/corporate-components",
+  "name": "@federicoReghini/vite-lib-reanimated",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "repository": "https://github.com/eng-fashion-moncler/monclient-corporate-app-components",
-  "version": "1.0.49",
+  "version": "1.0.1",
   "type": "module",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
