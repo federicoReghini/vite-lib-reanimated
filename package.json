@@ -1,11 +1,10 @@
 {
-  "name": "@federicoReghini/vite-lib-reanimated",
-  "private": false,
+  "name": "@eng-fashion-moncler/corporate-components",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "repository": "https://github.com/federicoReghini/vite-lib-reanimated",
-  "version": "1.0.0",
+  "repository": "https://github.com/eng-fashion-moncler/monclient-corporate-app-components",
+  "version": "1.0.49",
   "type": "module",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -17,32 +16,50 @@
     "build": "tsc --p ./tsconfig-build.json && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "web": "vite -c web/vite.config.ts",
+    "build:web": "tsc && vite build -c web/vite.config.ts",
+    "preview:web": "vite preview -c web/vite.config.ts"
   },
   "peerDependencies": {
+    "expo-clipboard": "~4.3.1",
+    "expo-datadog": "^49.0.1",
+    "i18next": "^21.6.10",
+    "lodash": "^4.17.21",
+    "lottie-react-native": "5.1.6",
     "react-native": "~0.72.4",
     "react-native-gesture-handler": "~2.12.0",
-    "react-native-reanimated": "~3.3.0"
+    "react-native-modal": "^13.0.1",
+    "react-native-svg": "13.9.0",
+    "victory-native": "36.5.3",
+    "zustand": "^4.4.1"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.199",
     "@types/node": "^20.8.5",
     "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
+    "@types/react-dom": "^18.2.18",
     "@types/react-native": "^0.72.5",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
-    "@vitejs/plugin-react": "^4.0.3",
+    "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "glob": "^10.3.10",
+    "lodash": "^4.17.21",
+    "lottie-react-native": "5.1.6",
     "react": "^18.2.0",
     "react-native": "~0.72.4",
+    "react-native-reanimated": "~3.3.0",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5",
+    "vite": "^4.5.1",
     "vite-plugin-babel": "^1.1.3",
     "vite-plugin-dts": "^3.6.0",
     "zustand": "^4.4.1"
+  },
+  "dependencies": {
+    "react-dom": "^18.2.0",
+    "react-native-web": "^0.19.10"
   }
 }

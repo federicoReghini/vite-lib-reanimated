@@ -5,9 +5,26 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React + TS</title>
+    <style>
+      /* these styles make the body full-height */
+      html,
+      body {
+        height: 100%;
+      }
+
+      /* these styles disable body scrolling if you are using <scrollview> */
+      body {
+        overflow: hidden;
+      }
+
+      /* these styles make the root element full-height */
+      #root {
+        height: 100%;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="./web/main.jsx"></script>
   </body>
 </html>
