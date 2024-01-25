@@ -1,0 +1,89 @@
+{
+  "keys": {
+    "accessKey": "C7BBA4241BFFA404C3FAF5CD2355AE123FFFDC4A",
+    "secretKey": "188A809425B8BDEF3AB825B519624C3199A30EB7"
+  },
+  "applicationId": "65a123e0cdcf033f7d6e280a",
+  "jscramblerVersion": "8.2",
+  "areSubscribersOrdered": false,
+  "useRecommendedOrder": true,
+  "tolerateMinification": true,
+  "profilingDataMode": "off",
+  "useAppClassification": true,
+  "codeHardeningThreshold": "104857600",
+  "browsers": {},
+  "filesSrc": [
+   "./dist/**"
+  ],
+  "filesDest": "./",
+  "sourceMaps": false,
+  "params": [
+   {
+      "name": "dateLock",
+      "options": {
+        "startDate": "2024-01-01",
+        "endDate": "2024-02-02",
+        "countermeasures": {
+          "customCallback": null,
+          "deleteCookies": false,
+          "redirect": null,
+          "breakApplication": true,
+          "realTimeNotifications": false,
+          "dataExfiltrationPrevention": false,
+          "selfDestruct": false
+        }
+      }
+    },
+    {
+      "name": "objectPropertiesSparsing"
+    },
+    {
+      "name": "variableMasking"
+    },
+    {
+      "name": "whitespaceRemoval"
+    },
+    {
+      "name": "identifiersRenaming",
+      "options": {
+        "mode": "SAFEST"
+      }
+    },
+    {
+      "name": "globalVariableIndirection"
+    },
+    {
+      "name": "dotToBracketNotation"
+    },
+    {
+      "name": "stringConcealing"
+    },
+    {
+      "name": "functionReordering"
+    },
+    {
+      "options": {
+        "freq": 1,
+        "features": [
+          "opaqueFunctions"
+        ]
+      },
+      "name": "functionOutlining"
+    },
+    {
+      "name": "propertyKeysObfuscation",
+      "options": {
+        "encoding": [
+          "hexadecimal"
+        ]
+      }
+    },
+    {
+      "name": "regexObfuscation"
+    },
+    {
+      "name": "booleanToAnything"
+    }
+  ]
+}
+

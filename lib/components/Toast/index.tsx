@@ -13,9 +13,6 @@ import {
   FlatList,
 } from "react-native";
 import Animated, {
-  Easing,
-  FadeInUp,
-  FadeOutUp,
   runOnJS,
   useAnimatedStyle,
   useSharedValue,
@@ -37,8 +34,6 @@ interface ToastPropsWithType extends ToastProps {
 export const ToastProvider: FC = () => {
   // # STATE
   const [listToast, setListToast] = useState<ToastProps[]>([]);
-
-  // # ZUSTAND
 
   // # REFS
   const emitterRef = useRef<EmitterSubscription | null>(null);
@@ -131,8 +126,10 @@ interface ToastUiProps extends ToastPropsWithType {
   position: string;
 }
 
+const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
+
 // # COMPONENT TOAST UI
-const ToastUi: FC<ToastUiProps> = ({
+export const ToastUi: FC<ToastUiProps> = ({
   message,
   status,
   duration,
@@ -146,13 +143,30 @@ const ToastUi: FC<ToastUiProps> = ({
 
   // # ANIMATIONS
   const minHeight = useSharedValue(55);
-  const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
   // # STYLES
   const expandedTextStyle = useAnimatedStyle(() => ({
     opacity: withSpring(expanded ? 1 : 0, { duration: 1000 }),
     display: withSpring(expanded ? "flex" : "none", { duration: 1000 }),
   }));
+
+  const FadeInUp = useAnimatedStyle(() => ({
+    opacity: withTiming(1, { duration: 700 }),
+    transform: [
+      {
+        translateY: withTiming(0, { duration: 700 }),
+      },
+    ],
+  }));
+
+  /*const FadeOutUp = useAnimatedStyle(() => ({
+    opacity: withTiming(0, { duration: 700 }),
+    transform: [
+      {
+        translateY: withTiming(-100, { duration: 700 }),
+      },
+    ],
+  }));*/
 
   // SIDE EFFECTS
   useEffect(() => {
@@ -185,11 +199,10 @@ const ToastUi: FC<ToastUiProps> = ({
 
   return (
     <Animated.View
-      entering={FadeInUp.duration(500).easing(Easing.inOut(Easing.ease))}
-      exiting={FadeOutUp.easing(Easing.inOut(Easing.ease))}
       style={[
         styles.container,
-        { backgroundColor: "red", minHeight: minHeight },
+        { backgroundColor: "red", minHeight: minHeight.value },
+        FadeInUp,
       ]}
     >
       <View style={styles.toast}>
